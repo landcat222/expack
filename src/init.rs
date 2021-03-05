@@ -13,4 +13,5 @@ fn get_expath() -> PathBuf {
             home
         },
     };
+    expath
 }
