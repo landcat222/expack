@@ -1,2 +1,2 @@
-fn init() {
+pub(crate) fn init() {
 }
