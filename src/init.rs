@@ -1,7 +1,9 @@
 use std::path::PathBuf;
 use std::env;
+use crate::EXPATH;
 
 pub(crate) fn init() {
+    EXPATH.set(get_expath()).unwrap();
 }
 
 fn get_expath() -> PathBuf {
