@@ -1,6 +1,5 @@
 use std::path::PathBuf;
 use std::env;
-use crate::EXPATH;
 
 pub(crate) fn init() {
 }
