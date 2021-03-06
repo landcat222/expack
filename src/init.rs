@@ -3,7 +3,6 @@ use std::env;
 use crate::EXPATH;
 
 pub(crate) fn init() {
-    EXPATH.set(get_expath()).unwrap();
 }
 
 pub(crate) fn get_expath() -> PathBuf {
