@@ -3,7 +3,6 @@ use std::env;
 mod init;
 
 fn main() {
-    init::init();
     println!("Hello, world!");
 }
 
