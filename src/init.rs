@@ -6,7 +6,7 @@ pub(crate) fn init() {
     EXPATH.set(get_expath()).unwrap();
 }
 
-fn get_expath() -> PathBuf {
+pub(crate) fn get_expath() -> PathBuf {
     let expath = match env::var("EXPATH") {
         Ok(path) => PathBuf::from(path),
         Err(_) => {
