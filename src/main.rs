@@ -6,7 +6,7 @@ fn main() {
     println!("Hello, world!");
 }
 
-pub(crate) fn get_expath() -> PathBuf {
+fn get_expath() -> PathBuf {
     let expath = match env::var("EXPATH") {
         Ok(path) => PathBuf::from(path),
         Err(_) => {
