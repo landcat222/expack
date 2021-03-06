@@ -1,6 +1,5 @@
 use std::path::PathBuf;
 use std::env;
-mod init;
 
 fn main() {
     println!("Hello, world!");
