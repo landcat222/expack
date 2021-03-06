@@ -7,4 +7,3 @@ description = "Expack is wrapper for any packaging wrappers"
 
 [dependencies]
 dirs = "3.0.1"
-once_cell = "1.7.2"
