@@ -11,12 +11,37 @@ struct EnvConf {
 
 fn init(file: String) -> EnvConf {
     EnvConf {
-        expath: PathBuf.from("/home/foo/.expack"),
-        bin: PathBuf.from("/home/foo/.expack/bin"),
-        pack: PathBuf.from("/home/foo/.expack/pack"),
-        base: PathBuf.from("/home/foo/.expack/pack/bar"),
-        files: PathBuf.from("/home/foo/.expack/pack/bar/files"),
-        src: PathBuf.from("/home/foo/.expack/pack/bar/pack"),
+        expath: get_expath(),
+        bin: {
+            let mut bin = get_expath();
+            bin.push("bin");
+            bin
+        },
+        pack: {
+            let mut pack = get_expath();
+            pack.push("pack");
+            pack
+        },
+        base: {
+            let mut base = get_expath();
+            base.push("pack");
+            base.push(&file);
+            base
+        },
+        files: {
+            let mut files = get_expath();
+            files.push("pack");
+            files.push(&file);
+            files.push("files");
+            files
+        },
+        src: {
+            let mut src = get_expath();
+            src.push("pack");
+            src.push(&file);
+            src.push("pack");
+            src
+        },
     }
 }
 
