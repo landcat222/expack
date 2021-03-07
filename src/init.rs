@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 use std::env;
 
-struct EnvConf {
+pub(crate) struct EnvConf {
     expath: PathBuf,
     bin: PathBuf,
     pack: PathBuf,
@@ -10,7 +10,7 @@ struct EnvConf {
     src: PathBuf,
 }
 
-fn init(file: String) -> EnvConf {
+pub(crate) fn init(file: String) -> EnvConf {
     EnvConf {
         expath: get_expath(),
         bin: {
