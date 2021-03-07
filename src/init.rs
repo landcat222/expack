@@ -1,4 +1,5 @@
 use std::path::PathBuf;
+use std::env;
 
 struct EnvConf {
     expath: PathBuf,
