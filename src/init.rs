@@ -9,7 +9,7 @@ struct EnvConf {
     src: PathBuf,
 }
 
-fn init(expath: PathBuf,file: String) -> EnvConf {
+fn init(file: String) -> EnvConf {
     EnvConf {
         expath: PathBuf.from("/home/foo/.expack"),
         bin: PathBuf.from("/home/foo/.expack/bin"),
