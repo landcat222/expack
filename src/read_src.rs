@@ -9,7 +9,9 @@ fn format(src: String) -> String {
     let pieces = src.split("\n");
     let mut result = String::new();
     for i in pieces {
-        result = format!("{}\n{}",result,i.trim());
+        if i.trim() != "" {
+            result = format!("{}\n{}",result,i.trim());
+        }
     }
     result
 }
