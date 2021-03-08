@@ -15,3 +15,15 @@ fn format(src: String) -> String {
     }
     result
 }
+
+fn conv_token(src: String) -> Vec<Vec<String>> {
+    let mut token: Vec<Vec<String>> = Vec::new();
+    for i in src.split("\n") {
+        let mut tmp = Vec::new();
+        for j in i.split(" ") {
+            tmp.push(j.to_string());
+        }
+        token.push(tmp);
+    }
+    token
+}
