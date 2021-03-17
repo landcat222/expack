@@ -1,4 +1,5 @@
 use std::path::PathBuf;
+use crate::init;
 
 fn format(src: String) -> String {
     let pieces = src.split("\n");
@@ -21,4 +22,8 @@ fn conv_token(src: String) -> Vec<Vec<String>> {
         token.push(tmp);
     }
     token
+}
+
+pub(crate) fn get_src(src: init::EnvConf) -> Vec<Vec<String>> {
+    conv_token(format(src.get_src()))
 }
