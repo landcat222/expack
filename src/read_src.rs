@@ -1,9 +1,5 @@
 use std::path::PathBuf;
-use std::fs::read_to_string;
-
-fn read_file(src: PathBuf) -> String {
-    read_to_string(src.display().to_string()).expect("File not found")
-}
+use crate::init;
 
 fn format(src: String) -> String {
     let pieces = src.split("\n");
@@ -26,4 +22,8 @@ fn conv_token(src: String) -> Vec<Vec<String>> {
         token.push(tmp);
     }
     token
+}
+
+pub(crate) fn get_src(src: init::EnvConf) -> Vec<Vec<String>> {
+    conv_token(format(src.get_src()))
 }
