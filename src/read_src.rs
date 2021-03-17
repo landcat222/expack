@@ -6,7 +6,7 @@ fn format(src: String) -> String {
     let mut result = String::new();
     for i in pieces {
         if i.trim() != "" {
-            result = format!("{}\n{}",result,i.trim());
+            result = format!("{}{}\n",result,i.trim());
         }
     }
     result
