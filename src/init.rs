@@ -1,5 +1,6 @@
 use std::path::PathBuf;
 use std::env;
+use std::fs::read_to_string;
 
 pub(crate) struct EnvConf {
     expath: PathBuf,
@@ -8,6 +9,12 @@ pub(crate) struct EnvConf {
     base: PathBuf,
     files: PathBuf,
     src: PathBuf,
+}
+
+impl EnvConf {
+    pub(crate) fn get_src(&self) -> String {
+        read_to_string(self.src.display().to_string()).expect("File not found")
+    }
 }
 
 pub(crate) fn init(file: String) -> EnvConf {
