@@ -14,8 +14,8 @@ fn format(src: String) -> String {
     result
 }
 
-fn conv_token(src: String) -> Vec<Vec<String>> {
-    let mut token: Vec<Vec<String>> = Vec::new();
+fn conv_token(src: String) -> Src {
+    let mut token: Src = Vec::new();
     for i in src.split("\n") {
         let mut tmp = Vec::new();
         for j in i.split(" ") {
@@ -26,6 +26,6 @@ fn conv_token(src: String) -> Vec<Vec<String>> {
     token
 }
 
-pub(crate) fn get_src(src: init::EnvConf) -> Vec<Vec<String>> {
+pub(crate) fn get_src(src: init::EnvConf) -> Src {
     conv_token(format(src.get_src()))
 }
