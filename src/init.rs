@@ -15,6 +15,11 @@ impl EnvConf {
     pub(crate) fn get_src(&self) -> String {
         read_to_string(self.src.display().to_string()).expect("File not found")
     }
+    pub(crate) fn get_cmd_path(&self, cmd: &str) -> String {
+        let mut path = self.bin.clone();
+        path.push(cmd);
+        path.display().to_string()
+    }
 }
 
 pub(crate) fn init(file: String) -> EnvConf {
