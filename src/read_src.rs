@@ -1,6 +1,8 @@
 use std::path::PathBuf;
 use crate::init;
 
+type Src = Vec<Vec<String>>;
+
 fn format(src: String) -> String {
     let pieces = src.split("\n");
     let mut result = String::new();
