@@ -2,7 +2,7 @@ use std::path::PathBuf;
 use std::collections::HashMap;
 use crate::init;
 
-pub(crate) type Src = Vec<Vec<String>>;
+type Src = Vec<Vec<String>>;
 
 fn format(src: String) -> String {
     let pieces = src.split("\n");
