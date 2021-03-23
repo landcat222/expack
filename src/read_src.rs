@@ -58,6 +58,6 @@ fn src_to_cmds(src: Src) -> HashMap<String,Src> {
     cmds
 }
 
-pub(crate) fn get_src(src: init::EnvConf) -> Src {
-    conv_token(format(src.get_src()))
+pub(crate) fn get_src(src: init::EnvConf) -> HashMap<String,Src> {
+    src_to_cmds(conv_token(format(src.get_src())))
 }
