@@ -12,7 +12,13 @@ fn format(src: String) -> String {
             result = format!("{}{}\n",result,i.trim());
         }
     }
-    result
+    result.trim().to_string()
+}
+
+#[test]
+fn format_test() {
+    let test_src = "main ls\nsub ls -A\ninstall {\necho ls\necho Install\n}\n";
+    println!("{}",format(test_src.to_string()));
 }
 
 fn conv_token(src: String) -> Src {
