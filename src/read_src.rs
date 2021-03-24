@@ -15,12 +15,6 @@ fn format(src: String) -> String {
     result.trim().to_string()
 }
 
-#[test]
-fn format_test() {
-    let test_src = "main ls\nsub ls -A\ninstall {\necho ls\necho Install\n}\n";
-    println!("{}",format(test_src.to_string()));
-}
-
 fn conv_token(src: String) -> Src {
     let mut token: Src = Vec::new();
     for i in src.split("\n") {
@@ -55,7 +49,7 @@ fn src_to_cmds(src: Src) -> HashMap<String,Src> {
         if tmp.len() > 0 {
             val.push(tmp.clone());
         }
-        if !fn_flag & (key != "".to_string()) {
+        if !fn_flag {
             cmds.insert(key.clone(),val.clone());
             key = String::new();
             val = Vec::new();
