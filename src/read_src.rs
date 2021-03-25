@@ -47,6 +47,9 @@ fn src_to_cmds(src: Src) -> HashMap<String,Src> {
             }
         }
         if tmp.len() > 0 {
+            if !fn_flag {
+                tmp.push("$@".to_string());
+            }
             val.push(tmp.clone());
         }
         if !fn_flag {
